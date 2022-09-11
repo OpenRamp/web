@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './stylesheet/index.scss';
 import './stylesheet/stepper.scss';
 import './stylesheet/tabs.scss';
+import 'react-toastify/dist/ReactToastify.min.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
