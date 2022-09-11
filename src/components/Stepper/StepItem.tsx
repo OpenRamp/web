@@ -26,7 +26,7 @@ export function StepItem(props: StepItemProps) {
       <Spacer />
       <div>
         <p className="m-0 fs-5 fw-medium m-0">{title}</p>
-        <p className="m-0 fs-5 fw-light text-inactive">{details}</p>
+        <p className="m-0 fs-5 text-inactive">{details}</p>
       </div>
     </div>
   );
