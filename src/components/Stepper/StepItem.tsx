@@ -1,6 +1,6 @@
 import React from 'react';
 import {Spacer} from '../kit';
-import {TStepItem} from './Stepper';
+import {TStepItem} from '../../config';
 
 export type StepItemProps = TStepItem & {
   index: number;

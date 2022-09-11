@@ -3,7 +3,7 @@
 .stepper-container {
   background-color: $light-gray;
   border-radius: 16px;
-  padding: 40px 56px;
+  padding: 56px;
 
   .step-item {
     .step-index {
@@ -15,6 +15,11 @@
       &.active {
         background-color: $active-step;
       }
+    }
+
+    .text-inactive {
+      line-height: 1;
+      padding-top: 4px;
     }
 
     .step-divider {

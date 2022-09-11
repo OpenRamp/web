@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './stylesheet/index.scss';
 import './stylesheet/stepper.scss'
+import './stylesheet/tabs.scss'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

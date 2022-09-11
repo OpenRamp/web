@@ -2,46 +2,30 @@ import React from 'react';
 import {StepItem} from './StepItem';
 import {Button} from 'react-bootstrap';
 import {Spacer} from '../kit';
+import {TStepItem} from '../../config';
 
-export type TStepItem = {
-  title: string;
-  details: string;
+export type StepperProps = {
+  steps: TStepItem[];
+  activeStep: number;
+  onButtonClick: () => void;
 };
 
-export function Stepper() {
-  const stepperItems: TStepItem[] = [
-    {
-      title: 'Add Order',
-      details: 'Choose coin and currency',
-    },
-    {
-      title: 'Find a Merchant',
-      details: 'Select the best offer',
-    },
-    {
-      title: 'Pay',
-      details: 'Start the transaction',
-    },
-    {
-      title: 'Release Money',
-      details: 'Confirm the transfer',
-    },
-  ];
+export function Stepper(props: StepperProps) {
+  const {steps, activeStep, onButtonClick} = props;
 
   return (
     <div className="stepper-container d-flex flex-column">
-      {stepperItems.map((item, i) => (
+      {steps.map((item, i) => (
         <StepItem
-          key={item.title}
           {...item}
           index={i}
-          active={i < 2}
-          divider={stepperItems.length !== i + 1}
+          active={i < activeStep}
+          divider={steps.length !== i + 1}
         />
       ))}
       <Spacer times={5} />
-      <Button className="rounded-16">
-        <p className="text-center m-0 fs-4 fw-bold">Approve Payment</p>
+      <Button className="rounded-16" onClick={onButtonClick}>
+        <p className="text-center m-0 fs-4 fw-bold">{steps[activeStep].buttonTitle}</p>
       </Button>
     </div>
   );

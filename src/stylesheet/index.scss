@@ -25,6 +25,10 @@ code {
   color: $inactive;
 }
 
+.text-dark-gray {
+  color: $dark-gray;
+}
+
 .bg-eee {
   background-color: #eeeeee;
 }
@@ -47,4 +51,31 @@ code {
 
 .rounded-16 {
   border-radius: 16px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.app-input {
+  background-color: $input-color;
+  border-radius: 12px;
+  height: 64px;
+  border: none;
+  padding: 0 16px;
+}
+
+.selecting-coin {
+  transition: transform 0.3s;
+  border-radius: 50%;
+  border: 2px solid transparent;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.selected-coin {
+    transform: scale(1.2);
+    border: 3px solid $active-step;
+  }
 }

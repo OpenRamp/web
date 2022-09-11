@@ -1,0 +1,22 @@
+@import './colors';
+
+.tabs-container {
+  border-radius: 40px;
+  height: 80px;
+  background-color: $white;
+  padding: 8px;
+
+  .tab-button {
+    flex: 1;
+    border-radius: 32px;
+    color: $inactive;
+    cursor: pointer;
+    height: unset;
+
+    &.active {
+      background-color: $blue;
+      font-weight: 500;
+      color: $white;
+    }
+  }
+}

@@ -12,7 +12,7 @@ export function Layout(props: LayoutProps) {
   return (
     <main>
       <Header />
-      <Spacer times={8} />
+      <Spacer times={5} />
       {children}
     </main>
   );
