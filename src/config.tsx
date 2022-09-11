@@ -1,5 +1,7 @@
 import React from 'react';
 import {SelectCoin} from './components/SelectCoin';
+import {BuySelectOrder} from './components/Buy/BuySelectOrder';
+import {SellSelectMerchant} from './components/Sell/SellSelectMerchant';
 
 export type TStepItem = {
   key: string;
@@ -29,7 +31,7 @@ export const config: AppConfig = {
       key: 'accept-order',
       title: 'Accept an Order',
       details: 'Start selling your fiat',
-      component: <div>2</div>,
+      component: <BuySelectOrder />,
       buttonTitle: 'Accept',
     },
     {
@@ -59,7 +61,7 @@ export const config: AppConfig = {
       key: 'select-merchant',
       title: 'Find a Merchant',
       details: 'Select the best offer',
-      component: <div>2</div>,
+      component: <SellSelectMerchant />,
       buttonTitle: 'Continue',
     },
     {

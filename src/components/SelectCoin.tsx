@@ -2,8 +2,8 @@ import React, {useMemo, useState} from 'react';
 import {Spacer, TabItem, Tabs} from './kit';
 import {config} from '../config';
 import {useLocation, useNavigate} from 'react-router-dom';
-import {SellForm} from './SellForm';
-import {BuyForm} from './BuyForm';
+import {SellForm} from './Sell/SellForm';
+import {BuyForm} from './Buy/BuyForm';
 
 export function SelectCoin() {
   const [selectedCoin, setSelectedCoin] = useState<string>('bitcoin');

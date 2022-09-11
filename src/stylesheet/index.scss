@@ -29,6 +29,10 @@ code {
   color: $dark-gray;
 }
 
+.text-light-gray {
+  color: $light-gray;
+}
+
 .bg-eee {
   background-color: #eeeeee;
 }
@@ -77,5 +81,25 @@ code {
   &.selected-coin {
     transform: scale(1.2);
     border: 3px solid $active-step;
+  }
+}
+
+.buy-order {
+  border: 2px solid transparent;
+  transition: all 0.3s;
+
+  .order-index {
+    width: 64px;
+    height: 64px;
+    background-color: $yellow;
+  }
+
+  &.active {
+    border-color: $active-step;
+    transform: scale(1.03);
+  }
+
+  &:hover {
+    transform: scale(1.03);
   }
 }

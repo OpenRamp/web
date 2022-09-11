@@ -1,5 +1,5 @@
 import React from 'react';
-import {Label, Spacer} from './kit';
+import {Label, Spacer} from '../kit';
 import {Col, Container, Row} from 'react-bootstrap';
 
 export function BuyForm() {
