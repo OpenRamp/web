@@ -21,10 +21,12 @@ export type MetaMaskContextState = {
   loading: boolean;
   error: string;
   chainId: string;
+  amount: string;
   handleConnect: () => void;
   handleSwitchNetwork: (network?: NetworkChainInfo) => void;
   handleAddNetwork: (network?: NetworkChainInfo) => void;
   handleDisconnect: () => void;
+  setAmount: (amount: string) => void;
 };
 
 export const metaMaskContextInitialState: MetaMaskContextState = {
@@ -39,10 +41,12 @@ export const metaMaskContextInitialState: MetaMaskContextState = {
   loading: false,
   error: '',
   chainId: '',
+  amount: '',
   handleConnect: () => {},
   handleSwitchNetwork: () => {},
   handleAddNetwork: () => {},
   handleDisconnect: () => {},
+  setAmount: () => {},
 };
 
 export const MetaMaskContext = createContext<MetaMaskContextState>(
@@ -70,6 +74,7 @@ export function MetaMaskProvider(props: MetaMaskProviderProps) {
   );
   const [balance, setBalance] = useState<MetaMaskContextState['balance']>('');
   const [chainId, setChainId] = useState<MetaMaskContextState['chainId']>('');
+  const [amount, setAmount] = useState<MetaMaskContextState['chainId']>('');
 
   useEffect(() => {
     const chainId = window?.ethereum?.chainId;
@@ -238,6 +243,8 @@ export function MetaMaskProvider(props: MetaMaskProviderProps) {
       handleAddNetwork,
       isCorrectNetwork,
       handleDisconnect,
+      setAmount,
+      amount,
     }),
     [
       connected,
@@ -252,6 +259,7 @@ export function MetaMaskProvider(props: MetaMaskProviderProps) {
       handleAddNetwork,
       isCorrectNetwork,
       handleDisconnect,
+      amount,
     ],
   );
 

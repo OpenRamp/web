@@ -6,7 +6,7 @@ import {SellForm} from './Sell/SellForm';
 import {BuyForm} from './Buy/BuyForm';
 
 export function SelectCoin() {
-  const [selectedCoin, setSelectedCoin] = useState<string>('bitcoin');
+  const [selectedCoin, setSelectedCoin] = useState<string>('dai');
 
   const navigate = useNavigate();
   const {pathname} = useLocation();

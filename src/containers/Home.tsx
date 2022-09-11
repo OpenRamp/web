@@ -1,6 +1,6 @@
 import React, {useMemo} from 'react';
-import {Button, Col, Container, Row} from 'react-bootstrap';
-import {useNavigate, useParams, useLocation} from 'react-router-dom';
+import {Col, Container, Row} from 'react-bootstrap';
+import {useParams, useLocation} from 'react-router-dom';
 import {Stepper} from '../components/Stepper/Stepper';
 import {config, TStepItem} from '../config';
 import Web3 from 'web3';
@@ -23,13 +23,11 @@ const unramp = new web3.eth.Contract(unrampJson.abi as any, unrampAddress);
 export function Home() {
   const {step} = useParams();
 
-  const {primaryAccount} = useMetaMask();
+  const {primaryAccount, amount} = useMetaMask();
 
   console.log(primaryAccount, 'primaryAccount');
 
   const {pathname} = useLocation();
-
-  const navigate = useNavigate();
 
   const isSell = useMemo(() => pathname.includes('sell'), [pathname]);
 
@@ -44,11 +42,10 @@ export function Home() {
   );
 
   const handlePostAd = async () => {
-    console.log('handlePostAd started');
     const tx = await unramp.methods.createPost(
       daiToken,
       'USD',
-      1,
+      amount,
       10000,
       'cash',
     );

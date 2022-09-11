@@ -1,8 +1,11 @@
 import React from 'react';
 import {Label, Spacer} from '../kit';
 import {Col, Container, Row} from 'react-bootstrap';
+import {useMetaMask} from '../../hooks/useMetaMask';
 
 export function BuyForm() {
+  const {setAmount, amount} = useMetaMask();
+
   return (
     <div>
       <Container>
@@ -11,7 +14,9 @@ export function BuyForm() {
             <Label
               label="You Pay"
               name="payAmount"
-              placeholder="BRL (from R$5.2/USDT)"
+              placeholder="1 USD"
+              value={amount}
+              onChange={e => setAmount(e.target.value)}
             />
           </Col>
           <Col xs={6}>
