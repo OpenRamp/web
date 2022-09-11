@@ -1,12 +1,15 @@
 import React from 'react';
 import {RootRouter} from './router/rootRouter';
 import {BrowserRouter} from 'react-router-dom';
+import {MetaMaskProvider} from './hooks/useMetaMask';
 
 function App() {
   return (
-    <BrowserRouter>
-      <RootRouter />
-    </BrowserRouter>
+    <MetaMaskProvider>
+      <BrowserRouter>
+        <RootRouter />
+      </BrowserRouter>
+    </MetaMaskProvider>
   );
 }
 

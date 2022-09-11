@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {Col, Container, Row} from 'react-bootstrap';
+import {Button, Col, Container, Row} from 'react-bootstrap';
 import {useNavigate, useParams, useLocation} from 'react-router-dom';
 import {Stepper} from '../components/Stepper/Stepper';
 import {config, TStepItem} from '../config';
@@ -23,13 +23,16 @@ export function Home() {
     [step, steps],
   );
 
+  const handlePostAd = () => {
+    console.log('handlePostAd started');
+    // window.ethereum.request()
+  };
+
   return (
     <Container>
       <Row>
         <Col xs={12} sm={12} md={6} lg={7}>
-          <div className="px-4">
-            {steps[currentStep].component}
-          </div>
+          <div className="px-4">{steps[currentStep].component}</div>
         </Col>
         <Col xs={12} sm={12} md={6} lg={5}>
           <Stepper
@@ -47,6 +50,9 @@ export function Home() {
           />
         </Col>
       </Row>
+      {/*<Button onClick={handlePostAd}>
+        <p>Test Buy</p>
+      </Button>*/}
     </Container>
   );
 }

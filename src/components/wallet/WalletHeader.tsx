@@ -1,21 +1,55 @@
 import React from 'react';
 import {shortenedString} from '../../utils/shortenedString';
-import {Spacer} from '../kit';
+import {useMetaMask} from '../../hooks/useMetaMask';
+import {defaultNetwork} from '../../networks';
 
 export function WalletHeader() {
-  return (
-    <div className="rounded-5 border border-2 border-light px-3 py-1 text-gray bg-eee d-flex align-items-center">
-      <div className="fs-6 fw-bold">
-        {shortenedString('0xd8ba23a5FBfDC54Acea3ccdf57a876af349A9702', 12, 3)}
+  const metaMask = useMetaMask();
+
+  console.log(metaMask, '<=== metamsl');
+
+  const {
+    handleConnect,
+    loading,
+    error,
+    connected,
+    primaryAccount,
+    balance,
+    handleSwitchNetwork,
+    isCorrectNetwork,
+    handleDisconnect,
+  } = metaMask;
+
+  console.log(primaryAccount, 'primaryAccount');
+
+  if (primaryAccount) {
+    return (
+      <div className="d-flex align-items-center">
+        <div className="rounded-5 border border-2 border-light px-3 py-1 text-gray bg-eee d-flex align-items-center">
+          <div className="fs-6 fw-bold">
+            {primaryAccount ? shortenedString(primaryAccount, 12, 3) : null}
+          </div>
+        </div>
+        {!isCorrectNetwork ? (
+          <div
+            className="btn btn-primary pointer"
+            style={{height: 'unset'}}
+            onClick={() => handleSwitchNetwork(defaultNetwork)}
+          >
+            <p className="m-0">Switch to Mumbai Network</p>
+          </div>
+        ) : null}
       </div>
-      <Spacer />
-      <div className="position-absolute wallet-avatar">
-        <img
-          src="/assets/images/wallet-avatar.png"
-          width="48px"
-          height="48px"
-        />
+    );
+  } else {
+    return (
+      <div
+        className="btn btn-dark rounded-5 border border-2 border-light px-3 py-1 text-gray d-flex align-items-center pointer"
+        style={{height: 'unset'}}
+        onClick={handleConnect}
+      >
+        <p className="m-0 text-white">Connect to Metamask</p>
       </div>
-    </div>
-  );
+    );
+  }
 }

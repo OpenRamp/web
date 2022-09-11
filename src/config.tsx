@@ -39,7 +39,7 @@ export const config: AppConfig = {
       title: 'Pay them',
       details: 'Declare payment',
       component: <div>3</div>,
-      buttonTitle: 'I Paid Theme',
+      buttonTitle: 'I Paid Them',
     },
     {
       key: 'payment-status',
