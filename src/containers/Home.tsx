@@ -42,6 +42,10 @@ export function Home() {
   );
 
   const handlePostAd = async () => {
+    if (!amount) {
+      toast.error('You need to enter min 1 pay amount');
+      return;
+    }
     const tx = await unramp.methods.createPost(
       daiToken,
       'USD',
