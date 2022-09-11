@@ -5,9 +5,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f4f4;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.h-100vh {
+  height: 100vh;
+}
+
+.text-gray {
+  color: #616161;
+}
+
+.bg-eee {
+  background-color: #eeeeee;
+}
+
+.wallet-avatar {
+  right: 24px;
 }
