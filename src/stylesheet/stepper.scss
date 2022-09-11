@@ -1,0 +1,29 @@
+@import './colors';
+
+.stepper-container {
+  background-color: $light-gray;
+  border-radius: 16px;
+  padding: 40px 56px;
+
+  .step-item {
+    .step-index {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: $inactive;
+
+      &.active {
+        background-color: $active-step;
+      }
+    }
+
+    .step-divider {
+      border: 2px solid $inactive;
+      height: 56px;
+
+      &.active {
+        border-color: $active-step;
+      }
+    }
+  }
+}

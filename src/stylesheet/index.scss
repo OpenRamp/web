@@ -1,3 +1,5 @@
+@import './colors';
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -21,10 +23,30 @@ code {
   color: #616161;
 }
 
+.text-inactive {
+  color: $inactive;
+}
+
 .bg-eee {
   background-color: #eeeeee;
 }
 
+.bg-light-gray {
+  background-color: $light-gray;
+}
+
 .wallet-avatar {
   right: 24px;
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.btn {
+  height: 80px;
+}
+
+.rounded-16 {
+  border-radius: 16px;
 }

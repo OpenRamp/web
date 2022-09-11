@@ -1,9 +1,18 @@
 import React from 'react';
+import {Col, Container, Row} from 'react-bootstrap';
+import {Stepper} from '../components/Stepper/Stepper';
 
 export function Home() {
-    return (
-        <div>
-            <h1 className="text-center">This is home page</h1>
-        </div>
-    );
+  return (
+    <Container>
+      <Row>
+        <Col xs={12} sm={12} md={6} lg={7}>
+          Left side
+        </Col>
+        <Col xs={12} sm={12} md={6} lg={5}>
+          <Stepper />
+        </Col>
+      </Row>
+    </Container>
+  );
 }
